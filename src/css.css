@@ -1,0 +1,641 @@
+/* ============ RESET ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #3f3f46 #1a1a1a;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  background: #1a1a1a;
+  color: #e5e7eb;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 6px;
+}
+
+/* ============ LAYOUT ============ */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* ============ SIDEBAR ============ */
+
+.history-link{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+}
+
+.mb-4{
+  display: flex;
+  background-color: var(--bg-selected);
+  color: black;
+  border-radius: 10px ;
+  padding: 0 10px ;
+  height: 40px ;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+aside {
+  width: 260px;
+  background: #202123;
+  border-left: 1px solid #2a2a2a;
+  display: flex;
+  flex-direction: column;
+}
+
+aside button {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #4b5563;
+  border-radius: 12px;
+  padding: 12px;
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+aside button:hover {
+  background: #2a2a2a;
+}
+
+
+.btnlogin{
+  width: 70px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+/* ============ HEADER ============ */
+header {
+  height: 56px;
+  background: rgba(33, 33, 33, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+/* ============ CHAT AREA ============ */
+.chat-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.chat-box {
+  max-width: 768px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ============ MESSAGES ============ */
+.msg {
+  display: flex;
+  gap: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+.msg.user {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar.bot {
+  background: #14b8a6;
+}
+
+.avatar.user {
+  background: #6366f1;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  line-height: 1.7;
+}
+
+.bubble.bot {
+  background: #212121;
+  border: 1px solid #2a2a2a;
+}
+
+.bubble.user {
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.3);
+}
+
+/* ============ INPUT ============ */
+.input-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, #1a1a1a, transparent);
+}
+
+.input-box {
+  max-width: 768px;
+  margin: auto;
+  position: relative;
+}
+
+.input-box input {
+  width: 100%;
+  background: #2f2f2f;
+  border: 1px solid #3f3f46;
+  border-radius: 18px;
+  padding: 14px 56px 14px 18px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.input-box input:focus {
+  outline: none;
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 1px rgba(20,184,166,.6);
+}
+
+.send-btn {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #14b8a6;
+  border: none;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.send-btn:hover {
+  background: #2dd4bf;
+}
+
+/* ============ ANIMATION ============ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ MOBILE ============ */
+@media (max-width: 768px) {
+  aside {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* login style  */
+.iconX{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 99999;
+  cursor: pointer;
+}
+
+
+.div-login{
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  /* background-color: #fff; */
+  height: 100%;
+}
+
+.div-login-v2{
+  position: relative;
+  background-color: #1a1a1a;
+}
+
+
+.buttonSTYLE{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 10px;
+}
+
+/* --- CSS VARIABLES --- */
+:root {
+    /* Robot Colors - NAVY THEME */
+    --navy-body: #0b1d33;
+    --navy-border: #2c4a70;
+    --teal: #00d2d3;
+    --teal-dark: #007a7a;
+    --yellow: #ffd700;
+    --yellow-dark: #b89b00;
+    --eye-blue: #00ffff;
+    
+    /* Form Colors */
+    --form-border: #000080;
+    --gold: #ffd700;
+    --gold-dark: #e6c200;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* =========================================
+   1. ROBOT STRUCTURE
+   ========================================= */
+.robot-model-v2 {
+    position: relative;
+    width: 250px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    gap: 20px;
+}
+
+.robot-model-v2 .error{
+  position: absolute;
+  bottom: 105%;
+  color: red;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+/* --- HEAD --- */
+.head {
+    width: 170px;
+    height: 155px;
+    background: var(--navy-body);
+    border-radius: 45% 45% 40% 40%;
+    position: relative;
+    z-index: 10;
+    box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3), 0 5px 15px rgba(0,0,0,0.2);
+    border: 2px solid var(--navy-border);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cap {
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 90px; height: 45px;
+    background: var(--teal);
+    border-radius: 50px 50px 10px 10px;
+    border: 4px solid var(--yellow);
+    border-bottom: none;
+}
+
+.ear {
+    position: absolute; top: 55px;
+    width: 25px; height: 45px;
+    background: var(--teal);
+    border: 4px solid var(--yellow);
+    z-index: -1;
+}
+.ear.left { left: -12px; border-radius: 15px 5px 5px 15px; }
+.ear.right { right: -12px; border-radius: 5px 15px 15px 5px; }
+
+.eye-row {
+    display: flex; justify-content: space-between;
+    padding: 0 30px; margin-top: 50px;
+}
+
+.eye {
+    width: 42px; height: 42px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+    border: 4px solid var(--eye-blue);
+    box-shadow: 0 0 10px var(--eye-blue);
+    transition: transform 0.2s ease-in-out, opacity 0.2s, background-color 0.2s;
+    transform-origin: center;
+}
+
+.eye::after {
+    content: ''; position: absolute;
+    top: 8px; left: 8px;
+    width: 10px; height: 10px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 2px;
+    transition: opacity 0.2s;
+}
+
+.mouth {
+    width: 35px; height: 8px;
+    background: #000;
+    border-radius: 0 0 20px 20px;
+    margin: 20px auto 0;
+    border: 1px solid var(--navy-border);
+    transition: 0.3s;
+}
+
+.neck {
+    width: 50px; height: 15px;
+    background: var(--teal-dark);
+    margin-top: -5px;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+/* --- TORSO --- */
+.torso {
+    width: 130px; height: 130px;
+    background: var(--navy-body);
+    border-radius: 30px 30px 40px 40px;
+    position: relative; z-index: 8;
+    display: flex; flex-direction: column; align-items: center;
+    border: 2px solid var(--navy-border);
+}
+
+.chest-screen {
+    width: 85px; height: 75px;
+    background: var(--teal);
+    border-radius: 15px; margin-top: 15px;
+    border: 3px solid var(--navy-body);
+    box-shadow: 0 0 0 1px var(--navy-border);
+    padding: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 4px; width: 100%; height: 100%;
+}
+
+.chip { background: var(--yellow); border-radius: 2px; }
+.chip:nth-child(1), .chip:nth-child(4), .chip:nth-child(13), .chip:nth-child(16) { background: var(--teal-dark); }
+.main-processor {
+    grid-column: 2 / span 2; grid-row: 2 / span 2;
+    background: #222; border-radius: 4px;
+    border: 1px solid #444;
+}
+
+.belly-text {
+    font-size: 8px; color: var(--teal);
+    font-weight: bold; text-align: center;
+    margin-top: 8px; letter-spacing: 1px;
+}
+
+/* --- ARMS --- */
+.arm {
+    position: absolute; top: 170px; z-index: 6; 
+    transform-origin: 50% 10px; 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), z-index 0.1s;
+}
+.arm.left { left: 10px; transform: rotate(10deg); }
+.arm.right { right: 10px; transform: rotate(-10deg); }
+
+.shoulder {
+    width: 45px; height: 35px;
+    background: var(--yellow);
+    border-radius: 20px 20px 5px 5px;
+    border-bottom: 3px solid var(--teal-dark);
+}
+
+.upper-arm { 
+    width: 35px; height: 40px; 
+    background: var(--navy-body); 
+    border-radius: 10px; 
+    margin: -5px auto 0; 
+    border: 2px solid var(--navy-border); 
+    position: relative; z-index: -1; 
+}
+.elbow { width: 25px; height: 10px; background: var(--teal); margin: -2px auto; }
+
+.lower-arm { 
+    width: 40px; height: 45px; 
+    background: var(--navy-body); 
+    border-radius: 10px 10px 15px 15px; 
+    margin: -2px auto 0; 
+    border: 2px solid var(--navy-border); 
+    position: relative; overflow: hidden; 
+    transform-origin: top center; 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.lower-arm::after { content: ''; position: absolute; left: -5px; top: 10px; width: 15px; height: 25px; background: var(--yellow); border-radius: 0 5px 5px 0; }
+
+.hand { 
+    width: 35px; height: 30px; 
+    background: var(--navy-body); 
+    border-radius: 10px; 
+    margin: 5px auto 0; 
+    border: 2px solid var(--navy-border);
+    transform-origin: top center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- LEGS --- */
+.leg-group { display: flex; gap: 15px; margin-top: -15px; z-index: 5; }
+.leg { display: flex; flex-direction: column; align-items: center; }
+.thigh { width: 40px; height: 35px; background: var(--teal); border-radius: 15px 15px 5px 5px; margin-bottom: -5px; }
+.shin { width: 50px; height: 55px; background: var(--navy-body); border-radius: 10px 10px 5px 5px; border: 2px solid var(--navy-border); display: flex; justify-content: center; align-items: center; }
+.knee-plate { width: 25px; height: 20px; background: var(--yellow); border-radius: 4px; border: 1px solid var(--yellow-dark); }
+.boot { width: 65px; height: 30px; background: var(--yellow); border-radius: 15px 15px 5px 5px; margin-top: -5px; border-bottom: 5px solid var(--teal); position: relative; z-index: 6; }
+.boot::after { content: ''; position: absolute; bottom: -5px; left: 15px; right: 15px; height: 8px; background: var(--white); border-radius: 10px 10px 0 0; }
+
+
+/* =========================================
+   2. PASSWORD ANIMATIONS (EYES ONLY)
+   ========================================= */
+
+/* A. General Alertness (Look at fields) */
+.main-container:focus-within .head {
+    transform: rotate(-5deg) translateY(5px);
+}
+
+/* B. PASSWORD: EYES CLOSE (No Arms) */
+
+/* 1. Head Reaction (Duck slightly) */
+.main-container:has(input[type="password"]:focus) .head {
+    transform: translateY(10px); 
+}
+
+/* 2. Eyes Close (Squint) */
+.main-container:has(input[type="password"]:focus) .eye {
+    transform: scaleY(0.1); 
+    border-width: 0px;
+    background: #333;
+    box-shadow: none;
+    /* Removed delay since arms are gone */
+}
+
+.main-container:has(input[type="password"]:focus) .eye::after {
+    opacity: 0;
+}
+
+/* 3. Mouth Surprise (Optional reaction) */
+.main-container:has(input[type="password"]:focus) .mouth {
+    height: 12px;
+    border-radius: 4px;
+    background: #111;
+}
+
+/* =========================================
+   3. FORM STYLES
+   ========================================= */
+fieldset {
+    background-color: white;
+    border: 2px solid var(--form-border);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+legend h1 { color: var(--form-border); margin: 0; padding: 0 10px; }
+
+.cont { position: relative; margin: 25px 0; width: 280px; }
+
+label {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%); 
+    background-color: white; padding: 0 5px; color: #999;
+    transition: all 0.3s ease; pointer-events: none; text-transform: capitalize;
+}
+
+input {
+    width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 7px;
+    outline: none; transition: all 0.3s ease; font-size: 16px; box-sizing: border-box;
+}
+
+input:focus + label, input:not(:placeholder-shown) + label {
+    top: 0; font-size: 12px; color: var(--navy-body); font-weight: bold;
+    
+    
+}
+
+/* input:focus { border-color: var(--gold); } */
+
+.button-group { text-align: center; margin-top: 15px;  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="submit"], input[type="reset"] , .button-group input[type="button"] {
+    border-radius: 15px; background-color: var(--gold);
+    padding: 10px 20px; border: none; cursor: pointer;
+    font-weight: bold; margin: 5px 0; transition: 0.2s;
+    
+}
+
+input[type="submit"]:hover, .button-group input[type="button"]:hover, input[type="reset"]:hover  { background-color: var(--gold-dark); transform: translateY(-2px); }
