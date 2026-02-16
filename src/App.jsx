@@ -224,7 +224,7 @@ async function GDFB(url) {
 
 
 function App() {
-  const backURL = "http://localhost:3000/api"
+  const backURL = "https://backendpython-vgws.onrender.com:3000/api"
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [inputValue, setInputValue] = useState("");
